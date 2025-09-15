@@ -5,20 +5,17 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-# Checkout your repo so abc.py is available
 - checkout: self
 
-# Make sure Python is available
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.x'
     addToPath: true
 
-# (Optional) Install dependencies if you have requirements.txt
-- script: |
-    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-  displayName: 'Install dependencies'
+# Debug: list files so you can verify paths
+- script: ls -R
+  displayName: 'List repo files'
 
-# Run your abc.py file
-- script: python abc.py
+# Run abc.py inside Freshers2025 folder
+- script: python Freshers2025/abc.py
   displayName: 'Run abc.py'
