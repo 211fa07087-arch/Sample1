@@ -12,10 +12,9 @@ steps:
     versionSpec: '3.x'
     addToPath: true
 
-# Debug: list files so you can verify paths
-- script: ls -R
-  displayName: 'List repo files'
-
-# Run abc.py inside Freshers2025 folder
-- script: python Freshers2025/abc.py
-  displayName: 'Run abc.py'
+# Debug: show where files actually are
+- script: |
+    echo "Listing all files in workspace"
+    pwd
+    ls -R
+  displayName: 'List all files recursively'
