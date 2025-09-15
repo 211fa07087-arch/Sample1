@@ -12,9 +12,5 @@ steps:
     versionSpec: '3.x'
     addToPath: true
 
-# Debug: show where files actually are
-- script: |
-    echo "Listing all files in workspace"
-    pwd
-    ls -R
-  displayName: 'List all files recursively'
+- script: python abc.py
+  displayName: 'Run abc.py'
