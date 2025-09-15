@@ -5,6 +5,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+# Checkout your repo so abc.py is available
+- checkout: self
+
 # Make sure Python is available
 - task: UsePythonVersion@0
   inputs:
